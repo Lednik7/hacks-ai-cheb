@@ -1,0 +1,650 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Animal</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <style>
+    .container1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #mapid {
+        margin: 5vh;
+        height: 75vh;
+        width: 70vw;
+        background-color: red;
+        border: 2px solid black;
+    }
+  </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header_start  -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="#map1">Карта</a></li>
+                                        <li><a href="#statistic">Статистика</a></li>
+                                        <li><a href="#send">Обратиться</a></li>
+                                        <li><a href="#solution">О решении</a></li>
+                                        <li><a href="#team">О команде</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header_start  -->
+    <div class = 'container1' id = 'map1'>
+        <div id="mapid"></div>
+    </div>
+
+    <!-- adapt_area_start  -->
+    <div class="adapt_area" id = 'statistic'>
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-5">
+                    <div class="adapt_help">
+                        <div class="section_title">
+                            <h3><span>We need your</span>
+                                help Adopt Us</h3>
+                            <p>Lorem ipsum dolor sit , consectetur adipiscing elit, sed do iusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices.</p>
+                            <a href="#send" class="boxed-btn3">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="adapt_about">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/mail2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3 class="counter">452</h3>
+                                        <p>Обращений обработано</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/location2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3><span class="counter">52</span>+</h3>
+                                        <p>Болевых точки выделено</p>
+                                    </div>
+                                </div>
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/man2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3><span class="counter">52</span>+</h3>
+                                        <p>Pets Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-section" id = "send">
+            <div class="container">
+                <div class="d-none d-sm-block mb-5 pb-4">
+                    <script>
+                        function initMap() {
+                            var uluru = {
+                                lat: -25.363,
+                                lng: 131.044
+                            };
+                            var grayStyles = [{
+                                    featureType: "all",
+                                    stylers: [{
+                                            saturation: -90
+                                        },
+                                        {
+                                            lightness: 50
+                                        }
+                                    ]
+                                },
+                                {
+                                    elementType: 'labels.text.fill',
+                                    stylers: [{
+                                        color: '#ccdee9'
+                                    }]
+                                }
+                            ];
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                center: {
+                                    lat: -31.197,
+                                    lng: 150.744
+                                },
+                                zoom: 9,
+                                styles: grayStyles,
+                                scrollwheel: false
+                            });
+                        }
+                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
+                    </script>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Get in Touch</h2>
+                    </div>
+                    <div style="width: 100%">
+                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Name"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    <!-- service_area_start  -->
+    <div class="service_area" id = 'solution'>
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Services for every dog</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_1.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Pet Boarding</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service active">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_2.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Healthy Meals</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_3.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Pet Spa</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end -->
+
+    <!-- team_area_start  -->
+    <div class="team_area" id = 'team'>
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Our Team</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="img/team/1.png" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>Rala Emaia</h4>
+                                <p>Senior Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="img/team/2.png" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>jhon Smith</h4>
+                                <p>Senior Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="img/team/3.png" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>Rala Emaia</h4>
+                                <p>Senior Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- team_area_start  -->
+
+    <!-- contact_anipat_start  -->
+    <div class="contact_anipat anipat_bg_1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact_text text-center">
+                        <div class="section_title text-center">
+                            <h3>Why go with Anipat?</h3>
+                            <p>Because we know that even the best technology is only as good as the people behind it. 24/7 tech support.</p>
+                        </div>
+                        <div class="contact_btn d-flex align-items-center justify-content-center">
+                            <a href="contact.html" class="boxed-btn4">Contact Us</a>
+                            <p>Or  <a href="#"> +880 4664 216</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact_anipat_end  -->
+
+    <!-- footer_start  -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contact Us
+                            </h3>
+                            <ul class="address_line">
+                                <li>+555 0000 565</li>
+                                <li><a href="#">Demomail@gmail.Com</a></li>
+                                <li>700, Green Lane, New York, USA</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3  col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Our Servces
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Pet Insurance</a></li>
+                                <li><a href="#">Pet surgeries </a></li>
+                                <li><a href="#">Pet Adoption</a></li>
+                                <li><a href="#">Dog Insurance</a></li>
+                                <li><a href="#">Dog Insurance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3  col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Quick Link
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Login info</a></li>
+                                <li><a href="#">Knowledge Base</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <p class="address_text">239 E 5th St, New York 
+                                NY 10003, USA
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="bordered_1px"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end  -->
+
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            disableDaysOfWeek: [0, 0],
+        //     icons: {
+        //      rightIcon: '<span class="fa fa-caret-down"></span>'
+        //  }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+         format: 'HH.MM'
+     });
+    </script>
+    <script>
+
+	var mymap = L.map('mapid').setView([56.124575, 47.240438], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+	L.marker([56.099779, 47.302330]).addTo(mymap)
+		.bindPopup("<b>Hello Maxim!</b><br />I live here.").openPopup();
+
+	L.circle([56.10059882935324, 47.30564844267057], 50, {
+		color: 'blue',
+		fillColor: '#f03',
+		fillOpacity: 0.5
+	}).addTo(mymap).bindPopup("I am a circle.");
+
+	L.polygon([
+		[56.101214, 47.307515],
+		[56.101325, 47.307944],
+		[56.100688, 47.308449],
+		[56.100589, 47.308019]
+	]).addTo(mymap).bindPopup("It's my school.");
+
+    L.marker([56.147059, 47.249659]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.087439, 47.274013]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.087439, 47.274013]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.110119, 47.179734]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.145389, 47.174174]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.103181, 47.296632]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.124803, 47.252615]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.110641, 47.223788]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.147079, 47.17765]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.116663, 47.220051]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.128847, 47.276797]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.103809, 47.278351]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.122219, 47.278181]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.122846, 47.177614]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.107047, 47.267661]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.108919, 47.456164]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.082743, 47.281495]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.145359, 47.171623]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.147059, 47.249659]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.070218, 47.224578]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.124155, 47.194691]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.124155, 47.194691]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.112327, 47.260143]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.118244, 47.187127]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.122279, 47.099236]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.135308, 47.277354]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.069097, 47.222916]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.107217, 47.265541]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.107217, 47.265541]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.147059, 47.249659]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.14387, 47.180498]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.122194, 47.198725]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.11833, 47.220949]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.104195, 47.275324]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.130226, 47.253549]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.103055, 47.307924]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.109305, 47.265793]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.1006, 47.279555]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.114721, 47.181235]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.095936, 47.283517]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.13128, 47.28472]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.129745, 47.272944]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.076217, 47.298896]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.146212, 47.180983]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.130191, 47.388584]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.132143, 47.332825]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.126438, 47.27024]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.100164, 47.222683]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.143785, 47.272728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.11969, 47.175297]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.126514, 47.276752]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.107759, 47.315209]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.12845, 47.231738]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.122324, 47.279519]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.143318, 47.181567]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.107217, 47.265541]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.1041, 47.316593]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.125856, 47.223662]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.123463, 47.088789]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139195, 47.162433]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.130307, 47.337703]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.149195, 47.230902]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.124758, 47.278639]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.130377, 47.284738]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.146212, 47.180983]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.133914, 47.278549]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.149045, 47.223294]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.095695, 47.279879]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.095695, 47.279879]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.076237, 47.306621]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.148423, 47.168487]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.103989, 47.281621]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.14387, 47.180498]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.127843, 47.259361]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.105621, 47.267482]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.109401, 47.188062]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.143925, 47.175386]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.111685, 47.191924]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.108919, 47.456164]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.139918, 47.247728]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.117697, 47.179833]).addTo(mymap).bindPopup("something").openPopup();
+L.marker([56.110565, 47.263583]).addTo(mymap).bindPopup("something").openPopup();
+
+
+	var popup = L.popup();
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+			.openOn(mymap);
+	}
+
+	mymap.on('click', onMapClick);
+
+</script>
+</body>
+
+</html>

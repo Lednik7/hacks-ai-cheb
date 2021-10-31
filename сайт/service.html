@@ -1,0 +1,474 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Капуста</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <style>
+    .container1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #mapid {
+        margin: 5vh;
+        height: 75vh;
+        width: 70vw;
+        background-color: red;
+        border: 2px solid black;
+    }
+  </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header_start  -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <h1>Kapusta</h1>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="#map1">Карта</a></li>
+                                        <li><a href="#statistic">Статистика</a></li>
+                                        <li><a href="#send">Обратиться</a></li>
+                                        <li><a href="#solution">О решении</a></li>
+                                        <li><a href="#team">О команде</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header_start  -->
+    <div class = 'container1' id = 'map1'>
+        <div id="mapid"></div>
+    </div>
+
+    <!-- adapt_area_start  -->
+    <div class="adapt_area" id = 'statistic'>
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-5">
+                    <div class="adapt_help">
+                        <div class="section_title">
+                            <h3><span>Статистика</span></h3>
+                            <p>Вы можете помочь благоустроить город, написав обращение со своей проблемой или идеей.</p>
+                            <a href="#send" class="boxed-btn3">Написать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="adapt_about">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/mail2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3><span class="counter">9000</span>+</h3>
+                                        <p>Обращений обработано</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/location2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3 class="counter">qqobrbqq</h3>
+                                        <p>Болевых точки выделено</p>
+                                    </div>
+                                </div>
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/man2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3 class="counter">qqparksqq</h3>
+                                        <p>Благоприяных мест выделено</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-section" id = "send">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Написать обращение</h2>
+                    </div>
+                    <div style="width: 100%">
+                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Текст обращения'" placeholder="Текст обращения"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid"  type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ФИО'" placeholder="ФИО">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Адрес'" placeholder="Адрес по которому обращение">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <a href = 'file:///C:/Users/arsepav/Documents/%D1%81%D0%B0%D0%B9%D1%82%20%D0%BD%D0%B0%20%D1%85%D0%B0%D0%BA%D0%B0%D1%82%D0%BE%D0%BD/service3.html' type="submit" class="button button-contactForm boxed-btn">Отправить</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- service_area_start  -->
+    <div class="service_area" id = 'solution'>
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Решение</h3>
+                        <p>Наши основные идеи при решении кейса.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_1.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Выделение</h3>
+                            <p>Выделение болевых точек, мест развлечения и мест питания позволяет понять где и чего не хватает.</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service active">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_2.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Значимость</h3>
+                            <p>"Болевые" точки разного размера, позволяют понять какие проблемы стоит решать в первую очередь.</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_3.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Обращения</h3>
+                            <p>Единая форма обращений позволит собирать максимально удобные для обработки данные.</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end -->
+
+    <!-- team_area_start  -->
+    <div class="team_area" id = 'team'>
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Наша команда</h3>
+                        <p>Команда людей, принимавших участие в разработке решения.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="img/team/1.png" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>Павлов Арсений</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="img/team/3.png" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>Герасимов Максим</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- team_area_start  -->
+
+    <!-- contact_anipat_start
+    <div class="contact_anipat anipat_bg_1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact_text text-center">
+                        <div class="section_title text-center">
+                            <h3>Why go with Anipat?</h3>
+                            <p>Because we know that even the best technology is only as good as the people behind it. 24/7 tech support.</p>
+                        </div>
+                        <div class="contact_btn d-flex align-items-center justify-content-center">
+                            <a href="contact.html" class="boxed-btn4">Contact Us</a>
+                            <p>Or  <a href="#"> +880 4664 216</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ contact_anipat_end  -->
+
+    <!-- footer_start
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contact Us
+                            </h3>
+                            <ul class="address_line">
+                                <li>+555 0000 565</li>
+                                <li><a href="#">Demomail@gmail.Com</a></li>
+                                <li>700, Green Lane, New York, USA</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3  col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Our Servces
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Pet Insurance</a></li>
+                                <li><a href="#">Pet surgeries </a></li>
+                                <li><a href="#">Pet Adoption</a></li>
+                                <li><a href="#">Dog Insurance</a></li>
+                                <li><a href="#">Dog Insurance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3  col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Quick Link
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Login info</a></li>
+                                <li><a href="#">Knowledge Base</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <p class="address_text">239 E 5th St, New York
+                                NY 10003, USA
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="bordered_1px"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+ -->
+
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            disableDaysOfWeek: [0, 0],
+        //     icons: {
+        //      rightIcon: '<span class="fa fa-caret-down"></span>'
+        //  }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+         format: 'HH.MM'
+     });
+    </script>
+    <script>
+
+	var mymap = L.map('mapid').setView([56.124575, 47.240438], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+
+    //<<points>>
+    //<<parks>>
+
+	var popup = L.popup();
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+			.openOn(mymap);
+	}
+
+	mymap.on('click', onMapClick);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1354 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Капуста</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <style>
+    .container1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #mapid {
+        margin: 5vh;
+        height: 75vh;
+        width: 70vw;
+        background-color: red;
+        border: 2px solid black;
+    }
+  </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header_start  -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <h1>Kapusta</h1>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="#map1">Карта</a></li>
+                                        <li><a href="#statistic">Статистика</a></li>
+                                        <li><a href="#send">Обратиться</a></li>
+                                        <li><a href="#solution">О решении</a></li>
+                                        <li><a href="#team">О команде</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header_start  -->
+    <div class = 'container1' id = 'map1'>
+        <div id="mapid"></div>
+    </div>
+
+    <!-- adapt_area_start  -->
+    <div class="adapt_area" id = 'statistic'>
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-5">
+                    <div class="adapt_help">
+                        <div class="section_title">
+                            <h3><span>Статистика</span></h3>
+                            <p>Вы можете помочь благоустроить город, написав обращение со своей проблемой или идеей.</p>
+                            <a href="#send" class="boxed-btn3">Написать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="adapt_about">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/mail2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3><span class="counter">9000</span>+</h3>
+                                        <p>Обращений обработано</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/location2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3 class="counter">381</h3>
+                                        <p>Болевых точки выделено</p>
+                                    </div>
+                                </div>
+                                <div class="single_adapt text-center">
+                                    <img src="img/service/man2.png" alt="">
+                                    <div class="adapt_content">
+                                        <h3 class="counter">499</h3>
+                                        <p>Благоприяных мест выделено</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-section" id = "send">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Написать обращение</h2>
+                    </div>
+                    <div style="width: 100%">
+                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Текст обращения'" placeholder="Текст обращения"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid"  type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ФИО'" placeholder="ФИО">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Адрес'" placeholder="Адрес по которому обращение">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <a href = 'file:///C:/Users/arsepav/Documents/%D1%81%D0%B0%D0%B9%D1%82%20%D0%BD%D0%B0%20%D1%85%D0%B0%D0%BA%D0%B0%D1%82%D0%BE%D0%BD/service3.html' type="submit" class="button button-contactForm boxed-btn">Отправить</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- service_area_start  -->
+    <div class="service_area" id = 'solution'>
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Решение</h3>
+                        <p>Наши основные идеи при решении кейса.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_1.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Выделение</h3>
+                            <p>Выделение болевых точек, мест развлечения и мест питания позволяет понять где и чего не хватает.</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service active">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_2.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Значимость</h3>
+                            <p>"Болевые" точки разного размера, позволяют понять какие проблемы стоит решать в первую очередь.</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="img/service/service_icon_3.png" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Обращения</h3>
+                            <p>Единая форма обращений позволит собирать максимально удобные для обработки данные.</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end -->
+
+    <!-- team_area_start  -->
+    <div class="team_area" id = 'team'>
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Наша команда</h3>
+                        <p>Команда людей, принимавших участие в разработке решения.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="img/team/1.png" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>Павлов Арсений</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="img/team/3.png" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>Герасимов Максим</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- team_area_start  -->
+
+    <!-- contact_anipat_start
+    <div class="contact_anipat anipat_bg_1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact_text text-center">
+                        <div class="section_title text-center">
+                            <h3>Why go with Anipat?</h3>
+                            <p>Because we know that even the best technology is only as good as the people behind it. 24/7 tech support.</p>
+                        </div>
+                        <div class="contact_btn d-flex align-items-center justify-content-center">
+                            <a href="contact.html" class="boxed-btn4">Contact Us</a>
+                            <p>Or  <a href="#"> +880 4664 216</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ contact_anipat_end  -->
+
+    <!-- footer_start
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contact Us
+                            </h3>
+                            <ul class="address_line">
+                                <li>+555 0000 565</li>
+                                <li><a href="#">Demomail@gmail.Com</a></li>
+                                <li>700, Green Lane, New York, USA</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3  col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Our Servces
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Pet Insurance</a></li>
+                                <li><a href="#">Pet surgeries </a></li>
+                                <li><a href="#">Pet Adoption</a></li>
+                                <li><a href="#">Dog Insurance</a></li>
+                                <li><a href="#">Dog Insurance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3  col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Quick Link
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Login info</a></li>
+                                <li><a href="#">Knowledge Base</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <p class="address_text">239 E 5th St, New York
+                                NY 10003, USA
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="bordered_1px"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+ -->
+
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            disableDaysOfWeek: [0, 0],
+        //     icons: {
+        //      rightIcon: '<span class="fa fa-caret-down"></span>'
+        //  }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+         format: 'HH.MM'
+     });
+    </script>
+    <script>
+
+	var mymap = L.map('mapid').setView([56.124575, 47.240438], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+
+    L.circle([56.065213, 47.282008000000005], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.0655936888889, 47.37432137777776], 75 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.06762866666666, 47.215595], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.06706437499999, 47.28324275], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.067820999999995, 47.289598], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.0659296875, 47.3715221875], 46 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.068164272727266, 47.21550100000001], 52 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('зелёные насаждения')
+L.circle([56.0692453846154, 47.22286011538461], 56 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.069389565217406, 47.28279356521739], 53 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.0683738, 47.2928286], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.069509, 47.298608], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.070112, 47.216529], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.070564851851856, 47.22430688888887], 57 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.07091481818181, 47.28233181818182], 52 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.070248, 47.291494], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.07101681249999, 47.30084625], 46 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.07235099999999, 47.28249400000001], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('парк')
+L.circle([56.07351275, 47.2923225], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.07297671428572, 47.30031000000001], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.073067, 47.307403], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.07293466666667, 47.35411533333333], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('сквер')
+L.circle([56.075491000000014, 47.28130875], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('место тихого отдыха')
+L.circle([56.074675500000005, 47.29296683333333], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.075633200000006, 47.30191059999999], 40 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.0760135, 47.3078655], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.077036, 47.2934745], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.07661811111112, 47.302964111111116], 48 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.076624, 47.307412], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.07955095833335, 47.276028791666675], 54 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.07977150000001, 47.2865085], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('зелёные насаждения')
+L.circle([56.079745, 47.29233575], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.07966666666667, 47.30378566666667], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.081125, 47.2712055], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('зелёные насаждения')
+L.circle([56.08139286046511, 47.28397462790694], 73 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.08099092307692, 47.29483753846154], 43 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.0818485, 47.2979525], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.081409, 47.31202449999999], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.08140399999999, 47.320593], 39 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.08310899999999, 47.275477000000016], 52 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.08295414705882, 47.28077423529409], 64 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.082828375000005, 47.292355125], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.0836676, 47.300227], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.0844855, 47.309249], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.085014666666666, 47.281153999999994], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.08593399999999, 47.289816428571434], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.08607000000001, 47.298550000000006], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.08570820000001, 47.31106799999999], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.08779949999998, 47.2742246160715], 142 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.08772999999999, 47.285996], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.086771, 47.292194], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.08731133333334, 47.3007255], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.086833999999996, 47.3139745], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.08990141176472, 47.2750294117647], 47 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.089806333333314, 47.279406291666696], 78 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.090221, 47.2930525], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.089659000000005, 47.304142000000006], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.090759, 47.307996], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.091406000000006, 47.277534], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.09205806249996, 47.28192125000003], 94 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.09169666666667, 47.3046915], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.094706, 47.267103999999996], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.09412363157892, 47.26947126315787], 68 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.093727463414645, 47.28168065853655], 71 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.096519, 47.2682395], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.09606208695654, 47.281731565217356], 99 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.096729, 47.296803000000004], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.09855343243244, 47.21957351351351], 67 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.09790400000001, 47.267401], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.09747269999999, 47.26902060000001], 50 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.09813655555555, 47.2816821111111], 57 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('парк')
+L.circle([56.09857816666666, 47.30591166666667], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.097465, 47.309132000000005], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.100195761904764, 47.221583380952396], 51 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.09959954545456, 47.27187227272727], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.099985855263135, 47.2841420263158], 106 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.10085273333332, 47.291463066666665], 45 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.09998224999999, 47.30402858333334], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.100578, 47.3097745], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('парк')
+L.circle([56.099872, 47.322827000000004], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.10207931578949, 47.27426165789475], 68 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1025461764706, 47.28042794117646], 81 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10217608333334, 47.2934055], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.10196699999995, 47.30317702777778], 138 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10293618461542, 47.31134438461541], 95 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10251029999999, 47.3230956], 40 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.102695666666676, 47.328369333333335], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.103893923076924, 47.174267384615376], 43 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10381834482759, 47.18086996551724], 88 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10504312903226, 47.26543132258063], 61 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.10406424489795, 47.271040346938776], 79 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10400086486484, 47.281314783783785], 67 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10483522222223, 47.28907011111111], 39 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.104445999999996, 47.298905], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.10398361538457, 47.31308173076923], 108 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10388544117647, 47.32456652941175], 64 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.103990541666654, 47.329267041666675], 54 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.10651822222222, 47.177513222222224], 57 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10675269999999, 47.18001446666668], 60 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.106556070588255, 47.26575500000002], 115 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.10639616666668, 47.27152050000001], 54 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.10641433333334, 47.283088509803896], 81 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10606033333334, 47.29084266666666], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10570624545453, 47.29917093636364], 140 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.106881874999985, 47.31417612499999], 46 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.10660259459455, 47.318881972972974], 104 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.106143, 47.32887025], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.107092, 47.37816299999999], 43 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.108452, 47.168271999999995], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.108474636363646, 47.174657], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.108193733333344, 47.1823152], 45 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10840699999999, 47.226123], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.10843192957746, 47.26616900000001], 101 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10813840350881, 47.27325650877193], 87 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.10834009090911, 47.28610463636364], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10839124, 47.29089688], 55 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10833620000001, 47.3018201], 40 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.10831672413792, 47.31510162068966], 59 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.107949338983, 47.32428933898308], 89 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.10883100000001, 47.33356788888888], 39 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.10891899999991, 47.45616400000005], 107 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.111017000000004, 47.155228], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.1105928888889, 47.16620396296297], 57 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11005057142858, 47.176494], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.1105043103448, 47.184431000000004], 59 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11116157142857, 47.18944785714284], 51 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11084916666667, 47.22246716666666], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.111457833333326, 47.240656333333334], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11058314035083, 47.2651122719298], 144 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.11031968000001, 47.27485416000001], 55 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11054499999999, 47.287838], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.110209, 47.306872999999996], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.1098055, 47.30878904545455], 52 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11122425, 47.323738500000005], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.112323571428576, 47.166492500000004], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.112829999999995, 47.169542], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11248927272727, 47.184557212121184], 63 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11234721739132, 47.19173578260868], 76 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11211099999995, 47.208328000000044], 99 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.113358545454545, 47.21451772727273], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.112357199999984, 47.2230816], 40 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.112888409090914, 47.237197863636354], 74 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.11285278504671, 47.24094027102802], 137 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11275148936172, 47.260251404255335], 77 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11345100000002, 47.26886786666666], 45 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1130925, 47.284114], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11208345454545, 47.313765272727274], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1117285, 47.32319975], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11438499999998, 47.178629], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.114822192307685, 47.18178119230769], 56 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11506674603178, 47.194323857142855], 93 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.1145, 47.198545], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.115553999999996, 47.216996], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.113868000000004, 47.22359], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('брусчатка')
+L.circle([56.113918000000005, 47.234675], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.115294578947385, 47.262059263157894], 49 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11487200000001, 47.27168344444447], 57 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.114079000000004, 47.282529], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11434000000005, 47.440865999999964], 79 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11726099999999, 47.17620399999999], 43 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.1168679130435, 47.181354130434755], 76 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11652613636364, 47.190794545454544], 52 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.116628, 47.20802200000002], 66 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('парк')
+L.circle([56.11679476923076, 47.2135202], 95 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11713857894737, 47.21986768421053], 49 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.116966453124995, 47.261161359375016], 94 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1197, 47.098104], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11966528, 47.175400120000006], 55 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.118844058823534, 47.185829705882334], 64 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.11875800000003, 47.19182220689656], 59 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11884689473685, 47.200115947368424], 49 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.11916036363639, 47.210754272727286], 63 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11851372727273, 47.22061614545456], 85 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('парк')
+L.circle([56.118649000000005, 47.229306333333334], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('сквер')
+L.circle([56.119087349999994, 47.2563379], 50 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.118169513513514, 47.25986594594596], 67 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.11987, 47.277013000000004], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.121227499999996, 47.080825000000004], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('игровая площадка')
+L.circle([56.121361, 47.095338454545455], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.121596, 47.102389], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.1212736363637, 47.176432036363636], 85 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.1207414, 47.18313379999999], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.120796423076925, 47.19316600000001], 56 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.120061, 47.199812], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('сквер')
+L.circle([56.1204965, 47.212015], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('зелёные насаждения')
+L.circle([56.1207685, 47.2259125], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.12029749999999, 47.23207016666667], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.120230333333325, 47.254467999999996], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12076154545454, 47.26252727272728], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.121451, 47.272602], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.12048199999999, 47.277669], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.12333712499999, 47.088505749999996], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.12256933333334, 47.093818583333324], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.12234399999999, 47.104554], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('общественный туалет')
+L.circle([56.123147641509455, 47.176615226415116], 136 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.123326867469906, 47.18192066265064], 113 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1228067037037, 47.19348559259259], 57 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12275684210527, 47.201550263157905], 49 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12348233333332, 47.21099999999999], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.123127000000004, 47.226626], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.12272366666667, 47.232148], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.1233156, 47.242348400000004], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.12342175, 47.252846000000005], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.12251, 47.263385], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.12310315555555, 47.27628862222219], 75 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12234710526316, 47.27888994736844], 49 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.12502585714286, 47.08687657142857], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.12547533333333, 47.09119033333334], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12446514285714, 47.1803326190476], 72 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.12482383000003, 47.19542079000001], 130 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12563050000001, 47.20074150000001], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12475733333333, 47.21314266666667], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.12585600000001, 47.223662], 50 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12479414285714, 47.23487014285714], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.125407499999994, 47.2431195], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.12533064705883, 47.25474576470589], 47 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.12497846875, 47.275346468750016], 62 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.125351840000015, 47.27895300000001], 55 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.1259139, 47.383559600000005], 50 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.125573333333335, 47.39067333333333], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('лавочка')
+L.circle([56.12713773684211, 47.08759805263159], 49 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.127748, 47.187684000000004], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('брусчатка')
+L.circle([56.12662280000001, 47.194120719999994], 55 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.12722278571429, 47.20334142857143], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('игровая площадка')
+L.circle([56.126248, 47.212083], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.12741078723406, 47.22451053191486], 77 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.126757166666685, 47.23227644444446], 48 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.12644366666666, 47.24266133333333], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.126963333333315, 47.25469141025642], 69 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.127757439999996, 47.26212036000001], 55 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12682722352939, 47.27255287058822], 115 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12713506, 47.28253764], 80 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12777133333333, 47.336799000000006], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.12765414285714, 47.33809314285714], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.127447, 47.37450116666667], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.126758399999986, 47.381026933333345], 45 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.12716155555556, 47.389930888888884], 39 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.129343111111105, 47.08548238888889], 48 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.129454, 47.090127], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12919633333333, 47.193553333333334], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('навигация')
+L.circle([56.128701500000005, 47.2037235], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.129414000000004, 47.218021], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('зелёные насаждения')
+L.circle([56.129476837837885, 47.22517805405404], 67 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.128496307692316, 47.23206623076923], 43 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.129496, 47.2433125], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12965062790698, 47.25528330232557], 73 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12922884, 47.26268848000001], 55 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.12925333333332, 47.273125900000004], 60 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.129364826923066, 47.28376848076922], 82 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.12958, 47.326348571428575], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.1292928888889, 47.329884111111106], 48 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.12926748000002, 47.34008996000001], 55 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.130131000000006, 47.38551999999999], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.13005752631578, 47.38795773684211], 49 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.13135366666666, 47.08567466666667], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13209166666669, 47.15516199999999], 48 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13087788888888, 47.22674472222223], 48 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.13136183333333, 47.23146833333333], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.131247741935475, 47.25318654838711], 61 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13118600000001, 47.262221624999995], 46 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.131586000000006, 47.273221666666664], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.130766522727306, 47.28471978409088], 118 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13145078571428, 47.33057364285713], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.13110283333334, 47.338774444444454], 48 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.133768, 47.087621], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.133832999999996, 47.148015], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13310723287673, 47.152783575342426], 103 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.134149, 47.163376], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('лавочка')
+L.circle([56.133373861111124, 47.23350044444444], 66 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.133435, 47.264419714285715], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.1339947, 47.2720334], 40 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13336320689656, 47.280203379310336], 59 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.134415000000004, 47.290038], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.132985625, 47.33260175], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.132484, 47.340012], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.135353, 47.158786], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.135503666666665, 47.160423333333334], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13539866666667, 47.23446266666667], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.13562153333334, 47.25530179999999], 45 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.134837, 47.264984000000005], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('место тихого отдыха')
+L.circle([56.135236235294116, 47.27609852941174], 47 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13539600000001, 47.2783990909091], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.13491825, 47.290400000000005], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.13620600000001, 47.299902], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.135629, 47.330481], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1383775, 47.15673], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.137781249999975, 47.16309553571425], 114 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.138096999999995, 47.2026595], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.13771975000001, 47.21643937500001], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.138358, 47.221856], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.136778, 47.257484000000005], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.13791768421052, 47.260813368421054], 49 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.136627000000004, 47.269709999999996], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.136611428571435, 47.28191157142857], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.1375834, 47.2928556], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.138438, 47.301411], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.137594695652176, 47.31135239130435], 53 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('лавочка')
+L.circle([56.14004133333333, 47.15414166666667], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.13940193333333, 47.16213991111111], 75 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.14020466666667, 47.17178722222223], 39 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.140249000000004, 47.188205], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1397342, 47.1894638], 40 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.139140857142856, 47.21340442857143], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.138869500000006, 47.2208235], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.139918000000606, 47.24772799999984], 200 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.13932462499999, 47.26330337500001], 38 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.1400244, 47.27008239999999], 45 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.140178500000005, 47.291624], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.138684, 47.304358], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.1388836, 47.310171600000004], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.139553, 47.31872166666667], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.141355999999995, 47.156457], 35 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.14216114814816, 47.17747644444445], 57 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.141362337662365, 47.182220792207744], 107 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.141799999999996, 47.19453504347826], 53 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.141362, 47.201321], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.14221131249999, 47.213845000000006], 46 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.14236, 47.228108999999996], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.141884499999996, 47.2299095], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.142202499999996, 47.247117], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.141950083333334, 47.250493166666665], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.14163622222222, 47.263396666666665], 39 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.141505333333335, 47.27002011111111], 39 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.142079, 47.287155], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('асфальтовая дорожка')
+L.circle([56.141625499999996, 47.291630749999996], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1417235, 47.31025725000001], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('брусчатка')
+L.circle([56.14221, 47.320454999999995], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.143885, 47.14832], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('зелёные насаждения')
+L.circle([56.14404533333334, 47.16274783333333], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.14397133333333, 47.17464750000001], 42 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('парк')
+L.circle([56.143762030769146, 47.181337138461565], 95 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.14361242857143, 47.19254171428571], 37 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.143133, 47.207932], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('сквер')
+L.circle([56.14365925, 47.21285075], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.14365718181818, 47.22205663636364], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.143193000000004, 47.232735], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('плитка')
+L.circle([56.14410566666667, 47.250363], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('парк')
+L.circle([56.1436328235294, 47.26605064705882], 47 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.143588307692305, 47.271250538461544], 43 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.14449200000001, 47.288421], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.14354399999999, 47.312101], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.14618065789475, 47.168172289473695], 68 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.14552688235293, 47.17399070588238], 115 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.146278229508226, 47.18186309836068], 91 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.146924, 47.195257], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('зелёные насаждения')
+L.circle([56.14630647619048, 47.21664733333333], 51 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.14621364285715, 47.21922592857144], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.145199, 47.26608000000001], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.14587054545454, 47.27241327272727], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.14553000000001, 47.283481], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.147566000000005, 47.146658], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.148062, 47.152551], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('спортивная площадка')
+L.circle([56.148227777777784, 47.16618033333334], 39 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.14729497727273, 47.17651275000001], 74 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.147444419354834, 47.18156225806454], 61 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.14764865217391, 47.195159913043476], 53 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.147382461538456, 47.21755023076922], 43 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.14834356451616, 47.22288675806451], 92 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.147786109090895, 47.2308093090909], 85 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.14705900000016, 47.24965899999962], 200 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.14722, 47.276303000000006], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('навигация')
+L.circle([56.14760733333333, 47.28361833333333], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('брусчатка')
+L.circle([56.15102363636365, 47.15504336363637], 41 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('брусчатка')
+L.circle([56.14967976923076, 47.164167000000006], 56 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.150281933333325, 47.17230099999999], 45 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.15019900000001, 47.18337383333334], 36 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.15006714285714, 47.19321371428572], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.15085, 47.20003933333333], 33 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.15021571428572, 47.21512257142856], 44 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.15029141666667, 47.22174841666668], 54 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.14943392307693, 47.23219092307693], 43 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.1498845, 47.2395305], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('брусчатка')
+L.circle([56.151387, 47.165361], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.15235787500001, 47.17191249999999], 46 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.15136700000001, 47.183651], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('брусчатка')
+L.circle([56.15208282352939, 47.193929], 47 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('детский городок')
+L.circle([56.152013000000004, 47.200809], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.151522, 47.216619], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.152106300000014, 47.219643700000006], 50 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('аллея')
+L.circle([56.151917000000005, 47.2370265], 34 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+L.circle([56.153302000000004, 47.193425], 32 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('пандус')
+L.circle([56.104557, 47.319695], 31 , {color: 'red', fillColor: '#f03', fillOpacity: 0.5}).addTo(mymap).bindPopup('освещение')
+
+    L.circle([56.123287, 47.255346], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('театры')
+L.circle([56.093094, 47.288062], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('театры')
+L.circle([56.14515400000001, 47.25066500000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('театры')
+L.circle([56.140866, 47.2455], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('театры')
+L.circle([56.144597, 47.236993], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('театры')
+L.circle([56.110821, 47.489563], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('театры')
+L.circle([56.143885, 47.249749], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.15118100000001, 47.24948], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.120442, 47.727087], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.94025500000001, 46.20287], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.302715, 47.041852], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118013, 47.717394], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849608, 46.601022], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.999823, 46.756781], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.93268199999999, 46.208125], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.130127, 46.242612], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.129952, 46.672806], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.49214, 46.419921], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.51494200000001, 47.477885], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.762130000000006, 48.221807], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.951396, 46.88877], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.111936, 47.714214], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.03208299999999, 47.458688], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.856735, 46.600456], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.940689, 46.202107], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.490345, 46.958156], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.83532099999999, 48.2239], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.82101700000001, 47.002892], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.86501, 47.47298], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.076747, 47.596813], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.864035, 47.789376], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.865773, 47.475127], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.9378, 47.934086], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.492023, 47.086875], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.49214, 46.419921], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.151773, 47.251626], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.197677, 46.325931], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.197677, 46.325931], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.00660799999999, 47.592465], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.148799, 47.187289], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.942806, 47.685549], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.87745500000001, 47.978292], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.076747, 47.596813], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.041411, 46.940917], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.52225, 47.508545], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.888848, 46.740862], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.841418, 46.596126], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.951886, 47.050296], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.878859, 46.296735], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.690283, 46.150085], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.855786, 46.601462], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.855254, 47.292194], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.750717, 47.533545], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849531000000006, 46.585454], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.120648, 47.722802], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.19908, 46.327718], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.197677, 46.325931], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.854729000000006, 46.598497], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.854284, 46.598542], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85377, 46.597617], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.854284, 46.598542], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849344, 46.587915], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118937, 47.724832], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.119288, 47.718265], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.852273, 46.598318], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.851521, 46.598713], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.119474, 47.72773400000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118074, 47.723134], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.869415, 47.475675], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.86717700000001, 47.478613], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.846628, 46.589721], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.112889, 47.714591], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.851702, 46.601417], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.848053, 46.597518], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.12067800000001, 47.721571], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.875809, 47.47420200000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.135057, 47.230345], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.15748000000001, 48.011934], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.844789, 48.256437], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.93689200000001, 46.206446], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.197708, 46.324996], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85220500000001, 46.596395], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849095, 46.578716], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.847022, 46.577791], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.143102, 47.252731], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.143494, 47.251079], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.141688, 47.247351], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.142676, 47.250315], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.15256, 47.249408], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.302715, 47.041852], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.302715, 47.041852], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.13216800000001, 47.24638], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.131124, 47.247171], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.133332, 47.246883], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.195986, 46.337564], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.197785, 46.32443], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.19935200000001, 46.32461], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.19961899999999, 46.324385], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.198818, 46.329623], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.199049, 46.328626], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.20265600000001, 46.332884], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.199249, 46.332884], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.1976, 46.327197], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849163, 46.597653], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.855672, 46.598497], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.867518, 46.539775], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.145229, 47.254088], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.973047, 46.520074], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.117231, 47.719361], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.120437, 47.727266], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.11702, 47.718849], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.851246, 46.597716], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.848225, 48.258979], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.940901, 46.207479], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.941707, 46.204838], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85469300000001, 46.600761], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.856761, 46.599153], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.11754200000001, 47.725182], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.934225, 46.20853], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.84914200000001, 46.585445], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.872193, 47.475693], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14499300000001, 47.252112], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.12054300000001, 47.723826], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14129200000001, 47.24965], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.131967, 47.244153], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.515737, 47.485781], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.140851, 47.248725], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.509701, 47.490515], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.510935, 47.491764], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.143559, 47.247773], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.933721, 46.203894], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.862295, 46.483288], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.853941000000006, 46.60271], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.840229, 47.823449], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.838905, 47.956867], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.834123, 48.047552], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.839816000000006, 46.572195], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.937896, 46.209212], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.007323, 47.336661], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.115825, 47.258031], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.00650699999999, 47.592959], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.487479, 46.964175], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.860039, 46.540098], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.561976, 47.654269], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.998972, 46.272831], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.199804, 46.333369], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.934149, 46.210919], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.936504000000006, 46.206446], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.936797, 46.208125], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.917526, 46.227763], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.15163199999999, 47.249372], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.93704399999999, 46.207101], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.86265600000001, 47.46732100000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.143102, 47.252731], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.142842, 47.251204], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849318, 46.594958], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.934064, 46.206949], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.514605, 47.486994], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.650551, 47.55337100000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.70353000000001, 46.892642], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.837611, 47.956148], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.682569, 47.467411], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.007403, 47.582988], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.94126899999999, 46.206904], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14200400000001, 47.251321], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.932485, 46.209518], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849665, 46.578429], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.937629, 46.21109000000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85674, 46.601803], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.151547, 47.235942], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.853579, 46.599207], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.850407, 46.580289], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.876268, 47.474687], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.137505, 47.24833], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.136221, 47.248446], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.069242, 47.602814], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.690146, 46.15227700000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.56244399999999, 47.642564], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.150795, 47.245069], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.152374, 47.247216], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.940538, 46.209527], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.587977, 47.76031500000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.066757, 47.607629], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.93154200000001, 46.201765], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.77597, 48.127843], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.73885500000001, 46.747636], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.131074, 47.246057], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.868001, 47.478873], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.93513299999999, 46.207964], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.824794, 46.129667], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.75095, 47.737687], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.47215799999999, 47.820817], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.647016, 46.929733], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.2728, 47.632755], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.145164, 47.250593], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.13886899999999, 47.24771], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.140168, 47.250306], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.140871, 47.245419], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14571, 47.224291], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.123287, 47.255274], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849453, 46.600033], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.87279399999999, 47.473564], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.50288000000001, 46.40997700000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.00164399999999, 47.635297], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.947253, 47.685234], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.585708, 46.610912], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.16167700000001, 47.990392], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.030375, 47.998405], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.4998, 46.415142], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.936252, 46.206742], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.842491, 46.535984], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.64760500000001, 47.74959000000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.899887, 46.716383], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.87161700000001, 47.471606], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.17937, 46.254541], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85469300000001, 46.600761], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.06284599999999, 47.288332], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.854708, 46.596323], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.853967, 46.601794], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.854392, 46.595784], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.841164, 46.598938], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.850329, 46.598443], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.853444, 46.599881], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849111, 46.598309], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.866668, 46.542092], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.848898, 46.597608], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849375, 46.594302], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85049, 46.59291], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.850687, 46.597869], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.850412, 46.59777], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85005400000001, 46.597761], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849163, 46.597653], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.848136, 46.58756500000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.855761, 46.60201], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14547, 47.252372], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.144587, 47.251968], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14524399999999, 47.253297], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.15163199999999, 47.249372], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.151316, 47.24709], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14477700000001, 47.252031], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14413100000001, 47.252345], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.145229, 47.254088], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.145239, 47.252148], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.852034, 46.598991], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.116673, 47.723017], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.116754, 47.722263], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.117988, 47.7237], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.120533, 47.725658], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.119905, 47.725461], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118611, 47.725344], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118254, 47.725272], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.117225, 47.725084], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.120397, 47.72494], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.119549, 47.718328], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.197677, 46.325931], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85333000000001, 46.595793], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.19815500000001, 46.324799], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.198227, 46.3247], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.198525, 46.32448400000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.851511, 46.600824], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.8532, 46.599009], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85244399999999, 46.60188400000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.852086, 46.601426], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.853174, 46.599755], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85282700000001, 46.598812], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.853812, 46.599423], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.846524, 46.592856], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.152781, 47.24691], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.120633, 47.723134], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118064, 47.724652], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.850002, 46.58858], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118937, 47.724832], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.855973, 46.601273], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.870339, 47.468471], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.854294, 46.599315], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118947, 47.72715], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.119293000000006, 47.722065], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.87100600000001, 47.47086], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849038, 46.58723300000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.871314, 47.470887], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.199229, 46.323802], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.20095500000001, 46.331401], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849681, 46.594545], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.84638399999999, 46.58725], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.848774, 46.590206], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.854729000000006, 46.598497], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.853459, 46.595982], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849738, 46.595254], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.845161, 46.599764], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.13915, 47.249731], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.296646, 47.095059], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.942806, 47.685549], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.888848, 46.740862], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14218, 47.250135], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.142676, 47.250315], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.876268, 47.474687], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.200878, 46.334977], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.83531600000001, 48.21189], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.51229100000001, 47.77847], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85479100000001, 46.593431], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.882737, 48.052052], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.83895, 46.586262], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.199188, 46.332614], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.19757900000001, 46.325176], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.941425, 46.207371], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.302715, 47.041852], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.83601899999999, 48.293385], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.13219300000001, 47.255732], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.927517, 47.673754], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.933509, 46.209904], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.15181800000001, 47.249902], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.970675, 47.849195], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.82101700000001, 47.002892], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.82101700000001, 47.002892], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.82101700000001, 47.002892], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.424975, 47.094951], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.035158, 47.433472], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.713782, 47.201006], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.108728, 47.47687], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.842413, 46.582346], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.59719000000001, 46.943415], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.02416700000001, 47.246075], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.142375, 46.510049], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.073386, 47.821203], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.640142, 47.064885], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.046393, 46.243654], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.495782, 46.858128], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.079995, 47.300594], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.82101700000001, 47.002892], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.82101700000001, 47.002892], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.858427, 46.54600900000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.147475, 47.268003], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.93546, 47.924285], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.070221, 46.415367], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.997386, 46.19492], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.929182, 46.340861], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.032119, 46.148379], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.17937, 46.254541], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.142591, 46.513768], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.826554, 47.492842], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.86603100000001, 47.383454], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.987246, 47.359433], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.78997800000001, 46.517999], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.886725, 47.517106], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.659256000000006, 47.002344], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.50694300000001, 47.491764], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.849417, 46.590323], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.118962, 47.724473], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.139898, 47.248204], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.886725, 47.517106], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.124873, 47.258696], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.108728, 47.47687], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.26217800000001, 47.536392], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.12230400000001, 47.253998], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.06440600000001, 47.607961], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.361119, 47.59203400000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.595028000000006, 47.296354], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.12230400000001, 47.253998], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.137841, 47.248482], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.605348, 47.300495], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.586247, 46.620129], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.854636, 46.409725], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.223283, 46.417379], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.06049399999999, 47.888846], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.47911800000001, 47.888873], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.145807, 48.043186], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.690506000000006, 46.56455], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.67090400000001, 47.81717], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.477761, 47.887229], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.855294, 46.600546], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.200878, 46.334977], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.198062, 46.325005], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.197785, 46.327691], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.19779499999999, 46.324736], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.157639, 48.008286], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.021498, 46.537124], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.010137, 46.668252], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.119429, 47.730123], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.702886, 47.923737], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.716637, 46.689578], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.84253399999999, 46.33866], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.200878, 46.334977], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.422559, 47.100745], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.729513, 47.435548], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.856811, 46.544634], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.98810200000001, 47.522136], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.14990699999999, 47.252722], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.135057, 47.230345], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.999823, 46.756781], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.605256, 46.260084], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.94086, 46.204757], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.851023, 46.589936], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.129978, 47.356056], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.01635, 47.124147], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.90017099999999, 46.389576], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.833435, 46.250319], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.856279, 46.601677], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.155942, 46.067261], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.768309, 46.61470300000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85479100000001, 46.593431], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.85479100000001, 46.593431], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.802371, 46.745632], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.62921600000001, 47.979747], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.199249, 46.322095], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.942806, 47.685549], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.17937, 46.254541], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.119429, 47.730123], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.13449, 47.230875], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.562912, 47.388862], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.86308, 47.224506], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.756396, 46.121501], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.077602, 47.364967], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.857497, 46.478357], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([54.839816000000006, 46.572195], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.111936, 47.714214], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.111936, 47.714214], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.76853199999999, 47.169359], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.999823, 46.756781], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([55.50694300000001, 47.491764], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('объекты_культурного_наследия')
+L.circle([56.141277, 47.249731], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.141277, 47.249731], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.106153000000006, 47.281864], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.965526, 46.771459], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.110696, 46.738994], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.861388, 46.663931], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.104667000000006, 46.746091], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.120778, 46.613975], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.08318000000001, 46.697177], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.109039, 46.689515], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.165423, 46.803116], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.13275, 46.776013], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.137866, 46.8385], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.08286800000001, 46.899244], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.09466, 46.926418], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.107383, 46.857554], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.058036, 46.881574], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.047072, 46.89542700000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.09529300000001, 46.84796], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.049229, 46.764659], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.04764, 46.854068], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.014182, 46.812817], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.98370600000001, 46.827595], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.014111, 46.837306], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.95116899999999, 46.804436], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.913268, 46.879967], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.92606, 46.827298], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.939882, 46.607588], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.099882, 46.918334], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.924502, 46.645812], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.902949, 46.610122], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.94566, 46.652235], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.99311700000001, 46.73885900000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.897836, 46.686038], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.871839, 46.680451], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.88437800000001, 46.674639], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.880748, 46.889632], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.85671, 46.939327], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.045277, 46.635337], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.042557, 46.594096], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.846103, 46.769402], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.137866, 46.8385], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.84336800000001, 46.737269], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.00167, 46.88824], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.02594499999999, 46.898499], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.968413, 46.879041], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.94742900000001, 46.930326], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.99505, 46.598129], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.86671800000001, 46.828098], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.12038199999999, 47.72502100000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.864035, 47.789376], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.99728, 47.70038], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.961369, 47.902528], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.861449, 47.918266], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.91579, 47.904585], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.946265, 47.68562100000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.904498, 47.817385], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.059815, 47.818661], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.00842, 47.586545], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.969013, 47.78843300000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.117853, 47.686187], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.082265, 47.69481], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.194398, 46.325356], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.132814, 46.245639], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.169025, 46.386127], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.26447099999999, 46.269831], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.06306, 46.097597], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.22167099999999, 46.420119], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.035395, 46.148828], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.12573100000001, 46.351604], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.15601899999999, 46.061511], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.226133, 46.277377], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.10685, 46.212222], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.142375, 46.510049], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.068252, 46.416436], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.079313, 46.310641], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([55.503191, 46.402072], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('культурно_досуговые_учреждения')
+L.circle([56.142561, 47.24667700000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('концертные_учреждения')
+L.circle([56.142561, 47.24667700000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('концертные_учреждения')
+L.circle([56.142561, 47.24667700000001], 45 , {color: 'green', fillColor: 'green', fillOpacity: 0.5}).addTo(mymap).bindPopup('концертные_учреждения')
+
+
+	var popup = L.popup();
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+			.openOn(mymap);
+	}
+
+	mymap.on('click', onMapClick);
+
+</script>
+</body>
+
+</html>
